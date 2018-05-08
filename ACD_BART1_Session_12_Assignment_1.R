@@ -23,11 +23,19 @@ results <- aov (yeastdata$nuc ~ yeastdata$`Class Distribution`)
 summary(results)
 
 #Since p value is significantly lesser than 0.05 we have strong evidence to reject null hypothesis 
-#and coclude that there is atleast one class significantly different than others.
+#and conclude that there is at least one class significantly different than others.
 
 
 
 #b. Which class is significantly different from others?
+
+
+plot(yeastdata$nuc ~ yeastdata$`Class Distribution`, col = heat.colors(10), xlab = "Class Distribution", ylab = "Score of discriminant analysis" , main = "Boxplot across classes")
+
+#Nuclear class is significantly different from others.
+
+
+#OR
 
 #In one-way ANOVA test, a significant p-value indicates that some of the group means 
 #are different, but we don't know which pairs of groups are different. It's possible to perform multiple pairwise-comparison, 
